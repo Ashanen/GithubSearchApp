@@ -1,4 +1,4 @@
-package com.filip.zych.githubsearchapp.di.screens
+package com.filip.zych.githubsearchapp.screens
 
 import androidx.annotation.UiThread
 import androidx.appcompat.app.AppCompatActivity
@@ -7,13 +7,13 @@ import com.filip.zych.githubsearchapp.di.application.ApplicationComponent
 import com.filip.zych.githubsearchapp.di.presentation.PresentationComponent
 import com.filip.zych.githubsearchapp.di.presentation.PresentationModule
 
-class BaseActivity : AppCompatActivity() {
+open class BaseActivity : AppCompatActivity() {
     private var isInjectorUsed: Boolean = false
 
     @UiThread
     fun getPresentationComponent(): PresentationComponent {
         if (isInjectorUsed) {
-            throw RuntimeException("there is no need to use injector more than once")
+            throw RuntimeException("Do not use this injector more than once")
         }
         isInjectorUsed = true
         return getApplicationComponent().newPresentationComponent(PresentationModule(this))

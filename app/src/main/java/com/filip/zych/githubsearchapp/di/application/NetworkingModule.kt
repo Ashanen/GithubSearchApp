@@ -1,7 +1,7 @@
 package com.filip.zych.githubsearchapp.di.application
 
 import com.filip.zych.githubsearchapp.BuildConfig
-import com.filip.zych.githubsearchapp.di.BASE_URL
+import com.filip.zych.githubsearchapp.BASE_URL
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
