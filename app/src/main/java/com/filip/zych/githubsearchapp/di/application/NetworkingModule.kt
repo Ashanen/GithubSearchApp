@@ -2,6 +2,7 @@ package com.filip.zych.githubsearchapp.di.application
 
 import com.filip.zych.githubsearchapp.BuildConfig
 import com.filip.zych.githubsearchapp.BASE_URL
+import com.filip.zych.githubsearchapp.networking.GithubApi
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -32,5 +33,9 @@ class NetworkingModule {
         return okHttpClientBuilder.build()
     }
 
-
+    @Singleton
+    @Provides
+    fun getGithubApi(retrofit: Retrofit): GithubApi {
+        return retrofit.create(GithubApi::class.java)
+    }
 }
