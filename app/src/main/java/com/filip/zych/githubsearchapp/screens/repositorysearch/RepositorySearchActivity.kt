@@ -12,8 +12,8 @@ class RepositorySearchActivity : BaseActivity(), RepositoriesListViewMvc.Listene
     lateinit var viewFactory: ViewMvcFactory
 
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         getPresentationComponent().inject(this)
         val mvcView = viewFactory.newInstance(RepositoriesListViewMvc::class.java, null)
 

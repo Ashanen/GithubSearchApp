@@ -1,5 +1,6 @@
 package com.filip.zych.githubsearchapp.screens
 
+import android.os.Bundle
 import androidx.annotation.UiThread
 import androidx.appcompat.app.AppCompatActivity
 import com.filip.zych.githubsearchapp.GithubApp
@@ -7,7 +8,7 @@ import com.filip.zych.githubsearchapp.di.application.ApplicationComponent
 import com.filip.zych.githubsearchapp.di.presentation.PresentationComponent
 import com.filip.zych.githubsearchapp.di.presentation.PresentationModule
 
-open class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity() {
     private var isInjectorUsed: Boolean = false
 
     @UiThread

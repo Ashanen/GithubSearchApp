@@ -8,14 +8,14 @@ import com.filip.zych.githubsearchapp.screens.repositorysearch.ResositoriesListV
 import javax.inject.Inject
 
 class ViewMvcFactory
-@Inject constructor(private val layoutInflater : LayoutInflater){
+@Inject constructor(val layoutInflater : LayoutInflater){
 
     fun <T : ViewMvc> newInstance(mvcViewClass: Class<T>, @Nullable container: ViewGroup?): T {
 
         val viewMvc: ViewMvc
 
         when (mvcViewClass) {
-            RepositoriesListViewMvc::class.java -> viewMvc = ResositoriesListViewMvcImpl(layoutInflater, container!!)
+            RepositoriesListViewMvc::class.java -> viewMvc = ResositoriesListViewMvcImpl(layoutInflater, container)
             else -> throw IllegalArgumentException("This mvc view is not supported, please add it $mvcViewClass")
         }
         return viewMvc as T
