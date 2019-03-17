@@ -2,7 +2,7 @@ package com.filip.zych.githubsearchapp.networking
 
 import com.google.gson.annotations.SerializedName
 
-data class Item(
+data class ItemSchema(
     @SerializedName("archive_url")
     val archiveUrl: String,
     @SerializedName("archived")

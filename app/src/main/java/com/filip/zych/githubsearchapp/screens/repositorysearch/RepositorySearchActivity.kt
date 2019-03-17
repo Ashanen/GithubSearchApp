@@ -3,6 +3,7 @@ package com.filip.zych.githubsearchapp.screens.repositorysearch
 import android.os.Bundle
 import android.widget.Toast
 import com.filip.zych.githubsearchapp.githubrepositories.FetchRepositoriesList
+import com.filip.zych.githubsearchapp.networking.ItemSchema
 import com.filip.zych.githubsearchapp.networking.RepositoriesListSchema
 import com.filip.zych.githubsearchapp.screens.BaseActivity
 import com.filip.zych.githubsearchapp.screens.views.ViewMvcFactory
@@ -41,11 +42,12 @@ class RepositorySearchActivity : BaseActivity(), RepositoriesListViewMvc.Listene
     }
 
 
-    override fun onRepositoryClicked() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onRepositoryClicked(repository: ItemSchema) {
+        Toast.makeText(this, "repository item clicked ", Toast.LENGTH_SHORT).show()
     }
 
     override fun onFetchRepositoriesSucceeded(repositoriesList: RepositoriesListSchema) {
+        mvcView.bindItems(repositoriesList.itemSchemas)
         Toast.makeText(this, "fetched with success", Toast.LENGTH_SHORT).show()
     }
 

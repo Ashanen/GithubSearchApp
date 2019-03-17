@@ -15,12 +15,12 @@ class FetchRepositoriesList(val githubApi: GithubApi) : BaseObservable<FetchRepo
         fun onFetchRepositoriesFailed()
     }
 
-    lateinit var mCall: Call<RepositoriesListSchema>
+    lateinit var cal1: Call<RepositoriesListSchema>
 
     fun fetchRepositoriesAndNotify() {
-        mCall = githubApi.repositoriesList("Advanced-Calculator-Cpp-Visual-Studio")
+        cal1 = githubApi.repositoriesList("Advanced-Calculator-Cpp-Visual-Studio")
 
-        mCall.enqueue(object : Callback<RepositoriesListSchema> {
+        cal1.enqueue(object : Callback<RepositoriesListSchema> {
             override fun onFailure(call: Call<RepositoriesListSchema>, t: Throwable) {
                 notifyFailed()
             }
