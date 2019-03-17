@@ -1,6 +1,7 @@
 package com.filip.zych.githubsearchapp.networking
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class ItemSchema(
     @SerializedName("archive_url")
@@ -148,4 +149,4 @@ data class ItemSchema(
     @SerializedName("watchers")
     val watchers: Int,
     @SerializedName("watchers_count")
-    val watchersCount: Int)
+    val watchersCount: Int) : Serializable

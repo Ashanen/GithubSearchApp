@@ -6,6 +6,7 @@ import com.filip.zych.githubsearchapp.githubrepositories.FetchRepositoriesList
 import com.filip.zych.githubsearchapp.networking.ItemSchema
 import com.filip.zych.githubsearchapp.networking.RepositoriesListSchema
 import com.filip.zych.githubsearchapp.screens.BaseActivity
+import com.filip.zych.githubsearchapp.screens.repositorydetails.RepositoryDetailsActivity.Companion.startDetailsActivity
 import com.filip.zych.githubsearchapp.screens.views.ViewMvcFactory
 import javax.inject.Inject
 
@@ -30,8 +31,6 @@ class RepositorySearchActivity : BaseActivity(), RepositoriesListViewMvc.Listene
         super.onStart()
         mvcView.registerListener(this)
         fetchRepositoriesList.registerListener(this)
-
-        fetchRepositoriesList.fetchRepositoriesAndNotify("")
     }
 
 
@@ -43,7 +42,7 @@ class RepositorySearchActivity : BaseActivity(), RepositoriesListViewMvc.Listene
 
 
     override fun onRepositoryClicked(repository: ItemSchema) {
-        Toast.makeText(this, "repository item clicked ", Toast.LENGTH_SHORT).show()
+        startDetailsActivity(this, repository)
     }
 
     override fun onFetchRepositoriesSucceeded(repositoriesList: RepositoriesListSchema) {

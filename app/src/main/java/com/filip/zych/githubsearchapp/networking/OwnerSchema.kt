@@ -1,6 +1,7 @@
 package com.filip.zych.githubsearchapp.networking
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class OwnerSchema(
     @SerializedName("avatar_url")
@@ -38,5 +39,4 @@ data class OwnerSchema(
     @SerializedName("type")
     val type: String,
     @SerializedName("url")
-    val url: String
-)
+    val url: String) : Serializable

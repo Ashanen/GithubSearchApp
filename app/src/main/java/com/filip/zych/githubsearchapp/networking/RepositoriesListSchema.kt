@@ -1,5 +1,6 @@
 package com.filip.zych.githubsearchapp.networking
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 
 data class RepositoriesListSchema(
@@ -8,5 +9,4 @@ data class RepositoriesListSchema(
     @SerializedName("items")
     val itemSchemas: List<ItemSchema>,
     @SerializedName("total_count")
-    val totalCount: Int
-)
+    val totalCount: Int) : Serializable
