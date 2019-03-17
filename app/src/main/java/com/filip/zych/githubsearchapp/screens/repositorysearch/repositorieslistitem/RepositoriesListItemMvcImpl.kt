@@ -25,6 +25,8 @@ class RepositoriesListItemMvcImpl(inflater: LayoutInflater, container: ViewGroup
 
     override fun bindItem(repositoryItem: ItemSchema) {
         this.repositoryItem = repositoryItem
-        getRootView().txt_title.text = repositoryItem.owner.toString()
+        getRootView().repository_name.text = getContext().getString(R.string.repository_name, repositoryItem.name)
+        getRootView().owner_login.text = getContext().getString(R.string.owner_login, repositoryItem.owner.login)
+        getRootView().language.text = getContext().getString(R.string.language, repositoryItem.language)
     }
 }

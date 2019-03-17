@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GithubSearchApp</string>
+    <string name="repository_name">Repository name : %1$s </string>
+    <string name="owner_login">Owner : %1$s</string>
+    <string name="language">Language : %1$s </string>
+    <string name="github_image">Github image</string>
 </resources>

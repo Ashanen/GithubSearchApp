@@ -53,10 +53,8 @@ class ResositoriesListViewMvcImpl(inflater: LayoutInflater, container: ViewGroup
                     textChangedJob?.cancel()
                     textChangedJob = GlobalScope.launch(Dispatchers.Main) {
                         delay(1000)
-                        editable?.let {
-                            for (listener in getListeners()) {
-                                listener.onSearchTyped(editable.toString())
-                            }
+                        for (listener in getListeners()) {
+                            listener.onSearchTyped(searchText)
                         }
                     }
                 }
