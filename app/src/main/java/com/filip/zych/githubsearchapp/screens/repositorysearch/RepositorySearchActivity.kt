@@ -31,7 +31,7 @@ class RepositorySearchActivity : BaseActivity(), RepositoriesListViewMvc.Listene
         mvcView.registerListener(this)
         fetchRepositoriesList.registerListener(this)
 
-        fetchRepositoriesList.fetchRepositoriesAndNotify()
+        fetchRepositoriesList.fetchRepositoriesAndNotify("")
     }
 
 
@@ -55,5 +55,8 @@ class RepositorySearchActivity : BaseActivity(), RepositoriesListViewMvc.Listene
         Toast.makeText(this, "fetched with failure", Toast.LENGTH_SHORT).show()
     }
 
+    override fun onSearchTyped(query: String) {
+        fetchRepositoriesList.fetchRepositoriesAndNotify(query)
+    }
 
 }
