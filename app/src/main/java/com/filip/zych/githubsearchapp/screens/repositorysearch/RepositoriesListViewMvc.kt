@@ -10,4 +10,7 @@ interface RepositoriesListViewMvc : ObservableViewMvc<RepositoriesListViewMvc.Li
     }
 
     fun bindItems(repositories: List<ItemSchema>)
+
+    fun showProgressBar()
+    fun hideProgressBar()
 }

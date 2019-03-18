@@ -18,6 +18,10 @@ class FetchRepositoriesList(val githubApi: GithubApi) : BaseObservable<FetchRepo
     lateinit var cal1: Call<RepositoriesListSchema>
 
     fun fetchRepositoriesAndNotify(query: String) {
+        if (query.isEmpty()) {
+            notifySucceeded(RepositoriesListSchema(false, emptyList(), 0))
+            return
+        }
         cal1 = githubApi.repositoriesList(query)
 
         cal1.enqueue(object : Callback<RepositoriesListSchema> {

@@ -47,15 +47,15 @@ class RepositorySearchActivity : BaseActivity(), RepositoriesListViewMvc.Listene
 
     override fun onFetchRepositoriesSucceeded(repositoriesList: RepositoriesListSchema) {
         mvcView.bindItems(repositoriesList.itemSchemas)
-        Toast.makeText(this, "fetched with success", Toast.LENGTH_SHORT).show()
+        mvcView.hideProgressBar()
     }
 
     override fun onFetchRepositoriesFailed() {
-        Toast.makeText(this, "fetched with failure", Toast.LENGTH_SHORT).show()
+        mvcView.hideProgressBar()
     }
 
     override fun onSearchTyped(query: String) {
+        mvcView.showProgressBar()
         fetchRepositoriesList.fetchRepositoriesAndNotify(query)
     }
-
 }

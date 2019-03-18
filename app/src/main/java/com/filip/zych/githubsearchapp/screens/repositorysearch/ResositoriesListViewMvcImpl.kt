@@ -3,8 +3,10 @@ package com.filip.zych.githubsearchapp.screens.repositorysearch
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.filip.zych.githubsearchapp.R
@@ -20,12 +22,14 @@ class ResositoriesListViewMvcImpl(inflater: LayoutInflater, container: ViewGroup
     private var adapter: RepositoriesRvAdapter
     private var recyclerView: RecyclerView
     private var searchBox: EditText
+    private var progressBar: ProgressBar
     private var textChangedJob: Job? = null
 
     init {
         setRootView(inflater.inflate(R.layout.layout_repositories_list, container, false))
         recyclerView = getRootView().recycler_view_repositories_list
         searchBox = getRootView().search_box
+        progressBar = getRootView().progress_bar
         recyclerView.layoutManager = LinearLayoutManager(getContext())
         adapter = RepositoriesRvAdapter(this, viewMvcFactory)
         recyclerView.adapter = adapter
@@ -67,5 +71,15 @@ class ResositoriesListViewMvcImpl(inflater: LayoutInflater, container: ViewGroup
 
             }
         })
+    }
+
+    override fun showProgressBar() {
+        recyclerView.visibility = View.GONE
+        progressBar.visibility = View.VISIBLE
+    }
+
+    override fun hideProgressBar() {
+        progressBar.visibility = View.GONE
+        recyclerView.visibility = View.VISIBLE
     }
 }
