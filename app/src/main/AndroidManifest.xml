@@ -3,7 +3,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         package="com.filip.zych.githubsearchapp">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
             android:name=".GithubApp"
@@ -12,16 +12,19 @@
             android:icon="@mipmap/ic_launcher"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name=".screens.repositorysearch.RepositorySearchActivity"
-                  android:windowSoftInputMode="stateVisible|adjustResize">
+                  android:windowSoftInputMode="stateVisible|adjustResize"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".screens.repositorydetails.RepositoryDetailsActivity"/>
+        <activity android:name=".screens.repositorydetails.RepositoryDetailsActivity"
+                  android:screenOrientation="portrait"/>
 
     </application>
 </manifest>

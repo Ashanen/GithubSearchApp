@@ -15,16 +15,19 @@
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:textStyle="bold"
+            android:textSize="@dimen/label_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="@string/owner_information"/>
 
-    <TextView android:id="@+id/owner_details_tv"
+    <TextView android:id="@+id/owner_login"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginTop="@dimen/activity_vertical_margin"
               android:layout_marginStart="@dimen/activity_horizontal_margin"
+              android:textSize="@dimen/details_text_size"
               app:layout_constraintTop_toBottomOf="@+id/owner_information_label"
               app:layout_constraintStart_toStartOf="parent"
               tools:text="Owner : Ashanen"/>
@@ -34,8 +37,9 @@
               android:layout_height="wrap_content"
               android:layout_marginStart="@dimen/activity_horizontal_margin"
               android:layout_marginTop="@dimen/activity_vertical_margin"
+              android:textSize="@dimen/details_text_size"
               app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintTop_toBottomOf="@+id/owner_details_tv"
+              app:layout_constraintTop_toBottomOf="@+id/owner_login"
               tools:text="Id: 30993768"/>
 
     <TextView android:id="@+id/owner_type"
@@ -43,6 +47,7 @@
               android:layout_height="wrap_content"
               android:layout_marginStart="@dimen/activity_horizontal_margin"
               android:layout_marginTop="@dimen/activity_vertical_margin"
+              android:textSize="@dimen/details_text_size"
               app:layout_constraintTop_toBottomOf="@+id/owner_id"
               app:layout_constraintStart_toStartOf="parent"
               tools:text="type: User"/>
@@ -54,28 +59,32 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:textStyle="bold"
+            android:textSize="@dimen/label_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/owner_type"
-            tools:text="Repository info"/>
+            android:text="@string/repository_info"/>
 
     <TextView android:id="@+id/full_name"
-              android:layout_width="wrap_content"
+              android:layout_width="0dp"
               android:layout_height="wrap_content"
               android:layout_marginEnd="@dimen/activity_horizontal_margin"
               android:layout_marginStart="@dimen/activity_horizontal_margin"
               android:layout_marginTop="@dimen/activity_vertical_margin"
+              android:textSize="@dimen/details_text_size"
               app:layout_constraintTop_toBottomOf="@+id/repository_info_label"
               app:layout_constraintEnd_toEndOf="parent"
               app:layout_constraintStart_toStartOf="parent"
               tools:text="Full_name : Ashanen/Advanced-Calculator-Cpp-Visual-Studio"/>
 
     <TextView android:id="@+id/description"
-              android:layout_width="wrap_content"
+              android:layout_width="0dp"
               android:layout_height="wrap_content"
               android:layout_marginEnd="@dimen/activity_horizontal_margin"
               android:layout_marginStart="@dimen/activity_horizontal_margin"
               android:layout_marginTop="@dimen/activity_vertical_margin"
+              android:textSize="@dimen/details_text_size"
               app:layout_constraintTop_toBottomOf="@+id/full_name"
               app:layout_constraintHorizontal_bias="0.0"
               app:layout_constraintEnd_toEndOf="parent"

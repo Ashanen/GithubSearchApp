@@ -8,7 +8,7 @@
 
     <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:background="@android:color/white"
+            android:background="@android:color/transparent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true">
 
@@ -20,15 +20,15 @@
                 app:expandedTitleTextAppearance="@android:color/transparent"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <ImageView android:layout_width="300dp"
+            <ImageView android:layout_width="250dp"
                        android:contentDescription="@string/github_image"
-                       android:layout_height="300dp"
+                       android:layout_height="250dp"
                        android:layout_marginEnd="@dimen/activity_horizontal_margin"
                        android:layout_marginStart="@dimen/activity_horizontal_margin"
                        android:layout_marginTop="@dimen/activity_vertical_margin"
                        android:adjustViewBounds="true"
                        android:layout_gravity="center"
-                       android:src="@drawable/view_github_logo"
+                       android:src="@drawable/image_github_logo"
                        android:layout_marginBottom="@dimen/activity_vertical_margin"
                        app:layout_collapseMode="parallax"/>
 
@@ -54,11 +54,12 @@
                     android:layout_width="match_parent"
                     android:id="@+id/search_box"
                     android:inputType="text"
-                    android:background="@android:color/white"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
+                    android:gravity="center"
                     android:textSize="@dimen/search_text_size"
                     android:hint="@android:string/search_go"
+                    android:background="@drawable/edit_text_shadow"
+                    android:padding="@dimen/padding_around_search_view"
                     android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:layout_marginTop="@dimen/activity_vertical_margin"
                     android:layout_marginEnd="@dimen/activity_horizontal_margin"
@@ -73,6 +74,8 @@
                     android:visibility="visible"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:layout_marginTop="@dimen/activity_vertical_margin"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/search_box"/>

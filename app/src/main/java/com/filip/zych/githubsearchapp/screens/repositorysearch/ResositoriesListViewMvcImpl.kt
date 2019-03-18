@@ -52,7 +52,7 @@ class ResositoriesListViewMvcImpl(inflater: LayoutInflater, container: ViewGroup
                     searchFor = searchText
                     textChangedJob?.cancel()
                     textChangedJob = GlobalScope.launch(Dispatchers.Main) {
-                        delay(1000)
+                        delay(500)
                         for (listener in getListeners()) {
                             listener.onSearchTyped(searchText)
                         }
@@ -68,6 +68,4 @@ class ResositoriesListViewMvcImpl(inflater: LayoutInflater, container: ViewGroup
             }
         })
     }
-
-
 }
