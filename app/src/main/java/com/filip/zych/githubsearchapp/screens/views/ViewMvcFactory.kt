@@ -3,6 +3,7 @@ package com.filip.zych.githubsearchapp.screens.views
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.Nullable
+import com.filip.zych.githubsearchapp.screens.ImageLoader
 import com.filip.zych.githubsearchapp.screens.repositorydetails.RepositoryDetailsViewMvc
 import com.filip.zych.githubsearchapp.screens.repositorydetails.RepositoryDetailsViewMvcImpl
 import com.filip.zych.githubsearchapp.screens.repositorysearch.RepositoriesListViewMvc
@@ -12,7 +13,7 @@ import com.filip.zych.githubsearchapp.screens.repositorysearch.repositorieslisti
 import javax.inject.Inject
 
 class ViewMvcFactory
-@Inject constructor(val layoutInflater : LayoutInflater){
+@Inject constructor(private val layoutInflater : LayoutInflater, private val imageLoader: ImageLoader){
 
     fun <T : ViewMvc> newInstance(mvcViewClass: Class<T>, @Nullable container: ViewGroup?): T {
 
@@ -21,7 +22,7 @@ class ViewMvcFactory
         when (mvcViewClass) {
             RepositoriesListViewMvc::class.java -> viewMvc = ResositoriesListViewMvcImpl(layoutInflater, container, this)
             RepositoriesListItemViewMvc::class.java -> viewMvc = RepositoriesListItemMvcImpl(layoutInflater, container)
-            RepositoryDetailsViewMvc::class.java -> viewMvc = RepositoryDetailsViewMvcImpl(layoutInflater, container)
+            RepositoryDetailsViewMvc::class.java -> viewMvc = RepositoryDetailsViewMvcImpl(layoutInflater, container, imageLoader)
             else -> throw IllegalArgumentException("This mvc view is not supported, please add it $mvcViewClass")
         }
         return viewMvc as T

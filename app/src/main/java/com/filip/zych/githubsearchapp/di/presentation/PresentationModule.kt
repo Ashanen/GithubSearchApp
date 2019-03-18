@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
+import com.filip.zych.githubsearchapp.screens.ImageLoader
 import dagger.Module
 import dagger.Provides
 
@@ -30,5 +31,10 @@ class PresentationModule(private var fragmentActivity: FragmentActivity) {
     @Provides
     fun getContext(activity: Activity): Context {
         return activity
+    }
+
+    @Provides
+    fun getImageLoader(activity: Activity): ImageLoader {
+        return ImageLoader(activity)
     }
 }
